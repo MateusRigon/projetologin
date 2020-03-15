@@ -1,0 +1,36 @@
+#conteudo {
+	text-align: center;
+}
+
+body{
+	background: url("../Imagens/auto.jpg");
+	background-color: cover;
+	background-position: center;
+}
+
+h1	{
+	text-transform: uppercase;
+}
+
+hr	{
+	width: 500px;
+	background-color: gray;
+	height: 1px;
+}
+
+html {
+	height: 100%;
+}
+
+#senha {
+    margin-left: 10px;
+}
+.jumbotron {
+	width: 600px;
+	margin-top: 100px;
+	margin-left: 22%;
+	background-color: white;
+}
+input	{
+	width: 180px;
+}
