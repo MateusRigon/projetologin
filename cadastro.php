@@ -21,7 +21,7 @@
               <h1 class="display-4">Cadastro</h1>
               <hr class="my-4">
             <div class="form-group">
-              <form method="POST" action="processa.php">
+              <form method="POST" action="processa.php" target="_self">
                   <!-- <label for="user">Usuário</label> -->
                   <input type="text" required="true" name="login" placeholder="Usuário" maxlength="30">
                   <br> <br>
