@@ -1,34 +1,46 @@
-#imagem {
-	background-image: url("../Imagens/auto4.jpg");
-	height: 625px;
-	background-color: cover;
-	background-position: center;
-}
 body	{
 	width: 1351px;
 }
+
 h1	{
 	text-transform: uppercase;
+	color: black;
 }
-#conteudo {
-	text-align: center;
-	padding-top: 15%;
-}
-#sen {
-	margin-left: 10px;
-}
+
 hr	{
 	width: 500px;
 	background-color: gray;
-	height: 1px;
 }
+
 button	{
 	text-transform: uppercase;
 }
+
 input	{
 	width: 180px;
 	border-radius: 10px;
 	padding: 5px 10px;
-	border: 1px solid black;
-	
+	border: 1px solid gray;
+}
+
+i 	{	
+	font-size: 40px;
+	color: black;
+	padding-left: 10rem;
+}
+
+li 	{
+	padding-right: 10rem;
+}
+
+#imagem {
+	background-image: url("../Imagens/imglogin.jpg");
+	height: 568px;
+	background-color: cover;
+	background-position: center;
+} 
+
+#conteudo {
+	text-align: center;
+	padding-top: 10%;
 }

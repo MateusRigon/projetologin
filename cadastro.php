@@ -1,55 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<?php 
+ 	// Conexão com banco de dados MySQL
+	$login = $_POST['login'];
+	$senha = $_POST['senha'];
+	$hostname = "localhost";
+	$user = "root";
+	$password = "";
+	$db = "cadastro";
+	$conexao = mysqli_connect($hostname,$user,$password,$db);
+	
+	// Retorna um alerta caso ocorra erro na conexão
+	if (!$conexao) {
+		echo"Falha na conexão com banco de dados!";
+	}
+	 
+    //Verifica o login no banco de dados  
+	$pegalogin = mysqli_query($conexao, "SELECT * FROM usuarios WHERE (login = '$login')");
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="CSS/cadastro.css">
+	if (mysqli_num_rows($pegalogin) == 1) {
+		 //Retorna erro caso o login já exista 
+		 echo"<script language='javascript' type='text/javascript'>
+	     alert('Login já existente');window.location.
+	     href='cadastropage.php'</script>";
 
-    <title>Página de Cadastro</title>
-  </head>
-  <body>
-    <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-
-            <div class="jumbotron rounded-circle">
-              <div id="conteudo">
-              <h1 class="display-4">Cadastro</h1>
-              <hr class="my-4">
-            <div class="form-group">
-              <form method="POST" action="processa.php" target="_self">
-                  <!-- <label for="user">Usuário</label> -->
-                  <input type="text" required="true" name="login" placeholder="Usuário" maxlength="30">
-                  <br> <br>
-                  <!-- <label id="senha"for="senha">Senha</label> -->
-                  <input type="password" required="true" name="senha" placeholder="Senha" maxlength="15">
-                  <br><br>
-                  <input id="button" class="btn btn-success btn-lg" type="submit" value="CADASTRAR" name="">
-              </form>
-
-            </div>
-
-
-    
-            </div>
-
-           </div>
-          </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-  </body>
-</html>
-
+	}else {
+		//Cadastra login e senha no banco de dados
+		$insert = "INSERT INTO usuarios(login,senha) VALUES ('$login','$senha')";  
+		$salvar = mysqli_query($conexao,$insert);
+		if ($salvar) {
+		  echo"<script language='javascript' type='text/javascript'>
+		    alert('Usuário cadastrado com sucesso!');window.location.
+		     href='loginpage.php'</script>";
+		}	
+       }
+       
+ ?>
