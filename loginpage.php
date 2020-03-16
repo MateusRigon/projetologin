@@ -15,7 +15,7 @@
   <body>
 	<!-- Navbar -->
 		<div>
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light mr-0">
 	          	<span><i class="fas fa-users"></i></i></span>
 	              	<div class="collapse navbar-collapse">
 	                  	<ul class="navbar-nav ml-auto">
@@ -25,7 +25,7 @@
 	      	</nav>
 
 	      <!-- Divisão do conteúdo de formulário -->
-			<div class="row">
+			<div class="row mr-0">
 				<div id="conteudo" class="col-6">
 					<h1 class="display-4">Entrar</h1>
 					<hr class="my-4">
